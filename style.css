@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --mainColor: rgb(226, 58, 7);
+    --secondaryColor: rgb(199, 30, 0);
+}
+
+body {
+    font-family: 'Sora', sans-serif;
+}
+
+.mainContainer {
+    padding: 60px;
+}
+
+.mainTitleAndSearchInput {
+    text-align: center;
+}
+
+.title {
+    margin-top: 4rem;
+    margin-bottom: 1.5rem;
+}
+
+.title h1 {
+    font-size: 2.2rem;
+}
+
+.quote p {
+    font-size: 17px;
+    margin-bottom: .5rem;
+}
+
+.quote em {
+    font-weight: bold;
+}
+
+.searchInputContainer {
+    max-width: 580px;
+    margin: 2rem auto 4rem;
+    height: 60px;
+    display: flex;
+}
+
+.searchInput {
+    height: inherit;
+    padding: 15px;
+    flex: 8;
+    border-radius: 30px 0 0 30px;
+    border: 1px solid var(--mainColor);
+    font-size: 20px;
+    outline: none;
+    color: var(--mainColor);
+    
+}
+
+
+
+.searchInput::placeholder {
+    color: var(--mainColor);
+}
+
+.searchBtn {
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--mainColor);
+    border-radius: 0 30px 30px 0;
+    width: 50px;
+    user-select: none;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.searchBtn:hover {
+    background-color: var(--secondaryColor);
+    transition: all .3s;
+}
+
+.searchBtn i {
+    color: white;
+    font-size: 30px;
+    
+}
+
+.resultTitle {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.mealImage img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.meal {
+    text-align: center;
+    box-shadow: 0 0 15px rgba(87, 87, 87, 0.3);
+    border-radius: 10px;
+    margin-bottom: 4rem;
+}
+
+.mealName {
+    margin: 1.5rem 0;
+}
+
+.getRecipeBtn {
+    margin-bottom: 3rem;
+    padding: 15px 25px;
+    font-size: 1.2rem;
+    background-color: var(--mainColor);
+    border: none;
+    color: white;
+    border-radius: 30px;
+    user-select: none;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.getRecipeBtn:hover {
+    background-color: var(--secondaryColor);
+    transition: all .3s;
+}
+
+.modalContainer {
+    position: fixed;
+    z-index: 2;
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    background-color: rgb(34, 34, 34, 0.9);
+}
+
+.showModal {
+    display: flex;
+}
+
+.modal {
+    background-color: var(--mainColor);
+    width: 700px;
+    height: 500px;
+    color: white;
+    text-align: center;
+    padding: 4rem 2rem;
+    overflow-y: scroll;
+    border-radius: 10px;
+    position: relative;
+}
+
+.modal h1, h3 {
+    margin: 1.5rem 0;
+}
+
+.modal h2 {
+    background-color: white;
+    color: var(--mainColor);
+    width: 120px;
+    margin: 0 auto;
+    padding: 8px 0;
+    border-radius: 3px;
+}
+
+.modal p {
+    line-height: 1.8rem;
+    font-size: 1.1rem;
+}
+
+.modalContainer a {
+    font-size: 1.5rem;
+}
+
+.modal a {
+    color: white;
+}
+
+.modalImage {
+    width: 100px;
+    height: 100px;
+    margin: 2rem auto;
+}
+
+.modalImage img {
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #fff;
+    border-radius: 30px;
+}
+
+.closeBtn {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    width: 35px;
+    height: 35px;
+    background-color: #fff;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    user-select: none;
+    cursor: pointer;
+}
+
+.closeBtn i {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.warningText {
+    color: var(--mainColor);
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .mealContainer {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 2rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .mealContainer {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+
+    .mainContainer {
+        padding: 20px;
+    }
+
+    .searchInput {
+        flex: none;
+        width: 82%;
+    }
+
+    .searchBtn {
+        width: 18%;
+    }
+}
